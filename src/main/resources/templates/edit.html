@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<script type="text/javascript" src="webjars/jquery/3.1.0/jquery.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/save}" method="post" th:each="inventory :${data}">
+	<label for="nama">Id</label>
+	<input type="text" id="id" name="id" th:value="${inventory.id}" />
+	<label for="nama">Nama</label>
+	<input type="text" id="nama" name="nama" th:value="${inventory.nama}" />
+	<label for="stock">Stock</label>
+	<input type="text" id="stock" name="stock" th:value="${inventory.stock}"/>
+	<input type="submit" value="save"/>
+</form>                                  
+</body>
+</html>
